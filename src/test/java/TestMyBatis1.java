@@ -20,13 +20,20 @@ public class TestMyBatis1 {
 	
 	@Before
 	public void before() {
-		ac = new ClassPathXmlApplicationContext("spring-mybatis.xml");
+		ac = new ClassPathXmlApplicationContext("applicationContext-mybatis.xml");
 		userService = (UserService) ac.getBean("userService");
 	}
 
 	@Test
 	public void testUser() {
 		List<User> list = userService.selectUser();
+		for (User user : list) {
+			System.out.println(user.getUuid()+":"+user.getUserName());
+		}
+	}
+	@Test
+	public void selectTableTest() {
+		List<User> list = userService.selectTest("t_sys_user");
 		for (User user : list) {
 			System.out.println(user.getUuid()+":"+user.getUserName());
 		}

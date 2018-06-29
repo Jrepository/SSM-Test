@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface UserService {
 	List<User> selectUser();
+	List<User> selectTest(String table);
 }

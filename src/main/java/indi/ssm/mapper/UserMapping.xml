@@ -8,4 +8,7 @@
 	<select id="selectUser" resultMap="resultMap">
 	    select UUID,USERNAME from t_sys_user
  	</select>
+ 	<select id="selectTest" resultMap="resultMap">
+	    select * from ${table}
+ 	</select>
 </mapper>
